@@ -1,0 +1,81 @@
+https://www.youtube.com/watch?v=_hZf1teRFNg
+
+GIT: Sistema de gerenciamento que versiona o código, permitindo ter um histórico de todas as versões do código, mostrando assim como estava após uma alteração e como está agora. 
+
+GITHUB: Serviço online de hospedagem de projetos gerenciados pelo GIT. 
+
+Após instalá-lo, ir em alguma pasta, clicar com o botão direito e selecionar a opção GUI BASH HERE.
+
+git config --global user.name "usuario" (Definir o usuário)
+
+git config --global user.email "email" (Associar à conta criada no site do GitHub)
+
+git config --list (ver as configurações aplicadas)
+
+--
+
+CONFIGURAÇÃO PARA VER ARQUIVOS OCULTOS NO WINDOWS
+
+Iniciar -> Opções do explorador de arquivos
+
+DESMARCAR: "Ocultar as extensões dos tipos de arquivos conhecidos".
+
+MARCAR: "Mostrar arquivos, pastas e unidades ocultas".
+
+--
+
+CONFIGURAR CHAVE SSH PARA O GITHUB
+
+SSH é um protocolo para comunicação de dados com segurança.
+
+O github aboliu a autenticação somente com usuário e senha.
+
+A ideia básica é cadastrar previamente quais computadores podem acessar o github em seu nome. Outros computadores não conseguem acessar.
+
+Para isto você deve:
+
+1 - Gerar uma chave SSH no seu computador.
+2 - Cadastrar essa chave no seu github. 
+
+https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+Após seguir os passos, a chave estará informada em
+Your identification has been saved in /c/Users/rafae/.ssh/id_ed25519
+
+Passo a passo: salvar primeira versão de um projeto no Github. Sempre que for criar um novo projeto, os passos básicos serão estes (troque os parâmetros em maiúsculo pelos seus dados (não precisa deixar em maiúsculo)).
+
+clicar com o botão direito no local onde o arquivo está e selecionar GUI BASH HERE
+
+git init (irá criar um repositório GIT nessa pasta, ou seja, será um projeto gerenciado pelo GIT, um repositório de versionamento)
+
+git add . (irá enviar o projeto para uma área temporária chamada STAGE, onde ficam os arquivos que se quer salvar pra próxima versão)
+
+git status (mostra o status do projeto)
+
+git commit -m "MENSAGEM EXPLICATIVA" (esses dois comandos servem para salvar uma versão)
+
+git branch -M main 
+
+ANTES DO PRÓXIMO PASSO, É NECESSÁRIO CRIAR O PROJETO NO GITHUB, NA PÁGINA INICIAL -> NEW -> DEFINIR O NOME DO REPOSITÓRIO -> CREATE REPOSITORY
+
+git remote add origin git@github.com:SEUUSUARIO/SEUREPOSITORIO.git (irá associar o projeto do computador com o projeto que está no GITHUB. Essa associação precisa ser feita para que seja possível enviar dados de um projeto pro outro. * AO CRIAR O REPOSITÓRIO, O GITHUB JÁ CRIAR ESSE COMANDO AUTOMATICAMENTE. NECESSÁRIO SELECIOAR A OPÇÃO SSH)
+
+git push -u origin main (envia pro GITHUB)
+
+PRONTO!!!
+
+Se for alterado algo no projeto, basta colocar os comandos:
+
+git pull
+
+git add .
+
+git commit -m "MENSAGEM DO QUE FOI ALTERADO"
+
+git push
+
+FEITO !!!
+
+
+
+
